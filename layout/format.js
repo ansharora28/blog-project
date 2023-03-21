@@ -5,7 +5,7 @@ export default function format({ children }) {
     return (
         <>
             <Head>
-                <title>Head</title>
+                <title>bLOg?</title>
             </Head>
 
             <Header />
