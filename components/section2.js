@@ -16,7 +16,6 @@ export default function section2() {
                 {Post()}
                 {Post()}
 
-
             </div>
         </section>
     )
