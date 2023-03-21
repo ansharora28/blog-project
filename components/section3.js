@@ -28,7 +28,7 @@ export default function section3() {
 
 function Post() {
     return (
-        <div className="news">
+        <div className="news px-2">
             <div className="image">
                 <Link href={"/"}><Image src={"/images/img3.png"} width={300} height={150} /></Link>
             </div>
@@ -48,7 +48,7 @@ function Post() {
 }
 function Post1() {
     return (
-        <div className="news">
+        <div className="news px-2">
             <div className="image">
                 <Link href={"/"}><Image src={"/images/img4.png"} width={260} height={150} /></Link>
             </div>
