@@ -2,7 +2,7 @@ import Link from "next/link"
 import Author from "./_child/author"
 import Image from "next/image"
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import CommentBox from "./comment";
 // import SwiperCore, { Autoplay } from 'swiper';
 import 'swiper/css';
 
