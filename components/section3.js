@@ -24,7 +24,7 @@ export default function section3() {
             <section className="container mx-auto md:px-20 py-10">
                 <div className="container mx-auto md:px-20">
 
-                    <h1 className="font-bold text-4xl py-12 text-center">Popular Posts</h1>
+                    <h1 className="font-bold text-4xl py-12 text-center">Popular Postssss</h1>
 
                     <Swiper
                         slidesPerView={2}
