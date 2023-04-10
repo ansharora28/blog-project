@@ -6,6 +6,8 @@ import Format from '../layout/format'
 import Section1 from '../components/section1';
 import Section2 from '../components/section2';
 import Section3 from '../components/section3';
+import PageWithComments from '../components/comment';
+import CommentBox from '../components/comment';
 // const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {

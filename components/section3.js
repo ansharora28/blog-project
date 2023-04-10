@@ -12,6 +12,14 @@ export default function section3() {
         const pageId = 'unique-page-id';
         const pageUrl = 'https://example.com/my-page';
         const pageTitle = 'My Page Title';
+        useEffect(() => {
+            const fetchComments = async () => {
+              const response = await fetch('http://localhost:3000/comments');
+              const data = await response.json();
+              setComments(data);
+            };
+            fetchComments();
+          }, []);
         return (
             <section className="container mx-auto md:px-20 py-10">
                 <div className="container mx-auto md:px-20">
@@ -27,8 +35,10 @@ export default function section3() {
                         <SwiperSlide>{Post1()}</SwiperSlide>
 
                     </Swiper>
-                    <CusdisCommentSection pageId={pageId} pageUrl={pageUrl} pageTitle={pageTitle} />
                 </div>
+                <div>
+            <CommentBox comments={comments} setComments={setComments} />
+            </div>
             </section>
         )
     }
