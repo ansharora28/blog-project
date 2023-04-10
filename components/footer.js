@@ -1,4 +1,4 @@
-import { ReactCusdis } from "react-cusdis";
+
 import PageWithComments from "./comment";
 export default function Footer() {
     return (
