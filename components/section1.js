@@ -49,7 +49,7 @@ function Slide() {
                     <Link href={"/"} className="text-orange-400 font-bold"> - March 20, 2023</Link>
                 </div>
                 <div className="title">
-                    <Link href={"/"} className="text-white text-4xl font-bold hover:text-orange-400 ">Totally accurate survey: Every 1 out of 10 students is a victim of forgetting to turn in their assignment in GCR</Link>
+                    <Link href={"/"} className="text-white text-4xl font-bold hover:text-orange-400 ">This is the Blog Post's title.</Link>
                 </div>
                 <p className="text-white-500 py-3 font-weight: 700 ">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec metus a urna sollicitudin volutpat. Nulla consequat nibh et finibus porta. Curabitur ac imperdiet ligula. Praesent posuere tellus ligula. Aliquam at dui elementum dolor pellentesque elementum. Donec posuere turpis vel tempus pharetra. Suspendisse eget convallis odio.
