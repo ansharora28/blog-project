@@ -1,6 +1,8 @@
+import { useState, useEffect } from "react";
 import Image from "next/image"
 import Link from "next/link"
 import Author from "./_child/author"
+import { client } from "@/lib/client";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
 import 'swiper/css';
@@ -8,6 +10,31 @@ import 'swiper/css';
 
 
 export default function section1() {
+    const [stories, setStories] = useState([]);
+    useEffect(() => {
+      client
+        .fetch(
+          `*[_type == "post"] {
+          title,
+          slug,
+          body,
+          publishedAt,
+          mainImage {
+            asset -> {
+              _id,
+              url
+            },
+            alt,
+          },
+          "name": author -> name,
+        } | order(pubishedAt desc)`
+        )
+        .then((data) => {
+          setStories(data);
+          console.log(data);
+        })
+        .catch(console.error);
+    }, []);
     SwiperCore.use([Autoplay])
     return (
         <section className="py-16">
@@ -22,26 +49,22 @@ export default function section1() {
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}
                 >
-                    <SwiperSlide>{Slide()}</SwiperSlide>
-                    <SwiperSlide>{Slide()}</SwiperSlide>
-                    <SwiperSlide>{Slide()}</SwiperSlide>
-                    <SwiperSlide>{Slide()}</SwiperSlide>
-
-                    ...
+                    {stories.map((story, index) => (
+                        <SwiperSlide key={index}>
+                            <Slide story={story}/>
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
-
-
-
             </div>
         </section>
     )
 }
 
-function Slide() {
+function Slide({story}) {
     return (
         <div className="grid md:grid-cols-2">
             <div className="image">
-                <Link href={"/"}><Image src={"/images/img1.png"} width={500} height={400} /></Link>
+                <Link href={"/"}><Image src={story.mainImage.asset.url} width={500} height={400} /></Link>
             </div>
             <div className="info flex justify-center flex-col">
                 <div className="cat">
